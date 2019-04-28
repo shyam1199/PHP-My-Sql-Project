@@ -29,14 +29,23 @@
 
 		// register user if there are no errors in the form
 		if (count($errors) == 0) {
+
+	        $query = "SELECT * FROM users WHERE username='$username'";
+			$results = mysqli_query($db, $query);
+
+			if (mysqli_num_rows($results) == 0) {
+
 			$password = md5($password_1);//encrypt the password before saving in the database
-			$query = "INSERT INTO users (username, email, password) 
+			$quer = "INSERT INTO users (username, email, password) 
 					  VALUES('$username', '$email', '$password')";
-			mysqli_query($db, $query);
+			mysqli_query($db, $quer);
 
 			$_SESSION['username'] = $username;
 			$_SESSION['success'] = "You are now logged in";
 			header('location: index.php');
+		}else{
+			array_push($errors, "Username already exists");
+		}
 		}
 
 	}
@@ -63,7 +72,26 @@
 			if (mysqli_num_rows($results) == 1) {
 				$_SESSION['username'] = $username;
 				$_SESSION['success'] = "You are now logged in";
-				header('location: index.php');
+
+				 $row = mysqli_fetch_array($results);
+    	     
+    	     	   if ($row['type']=="user") {
+    		    	   header('location: index.php');
+            		}
+            		elseif ($row['type']=="admin") {
+            			header('location: adminindex.php');
+            		}
+            		elseif ($row['type']=="supervisor") {
+            			header('location: sup.php');
+            		}
+            		elseif ($row['type']=="engineer") {
+            			header('location: engineer.php');
+            		}
+            		else{
+            			array_push($errors, "User doesn't exists");
+            		}
+            	    
+				
 			}else {
 				array_push($errors, "Wrong username/password combination");
 			}

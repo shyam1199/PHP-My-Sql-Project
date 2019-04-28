@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div class="header">
-		<h2>Complaint History</h2>
+		<h2>Pending Complaint</h2>
 	</div>
 	
 <form method="post" action="complain_history.php">
@@ -17,11 +17,16 @@
 
 
     	<?php 
-         $row = mysqli_fetch_array($reshis);
+         $row = mysqli_fetch_array($curr);
     	if ($row=="") {
     		echo "No previous History exists";
     	}
     	while ($row) { ?>
+
+    		<div class="input-group">
+		    <label for="id" class="col-sm-2 col-form-label">ID</label>
+		     <input type="text" readonly class="form-control-plaintext" id="id" value="<?php echo $row['id']; ?>">
+		    </div>
    
 			<div class="input-group">
 		    <label for="dept" class="col-sm-2 col-form-label">Department</label>
@@ -43,16 +48,19 @@
 		      <input type="text" readonly class="form-control-plaintext" id="status" value="<?php echo $row['status']; ?>">
 		    </div>
 
+		     <div class="input-group">
+		    <label for="workers" class="col-sm-2 col-form-label">Worker</label>
+		      <input type="text" readonly class="form-control-plaintext" id="workers" value="<?php echo $row['workers']; ?>">
+		    </div>
+
 		   <br/> <br/>
 
-    	<?php  $row = mysqli_fetch_array($reshis);} ?>
+    	<?php  $row = mysqli_fetch_array($curr);} ?>
  
 
 		
 		<p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
 	</form>
-		
-		
  
 		
 </body>

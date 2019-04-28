@@ -21,7 +21,7 @@
 		</div>
 		<div class="input-group">
 			<label>Problem Type</label>
-			<input type="text" name="type" value="<?php echo $type; ?>">
+			<input type="text" name="ptype" value="<?php echo $ptype; ?>">
 		</div>
 		<div class="input-group">
 			<label>Problem Description</label>

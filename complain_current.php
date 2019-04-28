@@ -9,17 +9,17 @@
 </head>
 <body>
 	<div class="header">
-		<h2>Complaint History</h2>
+		<h2>Complaint Pending</h2>
 	</div>
 	
-<form method="post" action="complain_history.php">
+<form method="post" action="complain_current.php">
     	<?php include('errors.php'); ?>
 
 
     	<?php 
-         $row = mysqli_fetch_array($reshis);
+         $row = mysqli_fetch_array($rescurr);
     	if ($row=="") {
-    		echo "No previous History exists";
+    		echo "No previous Current Complain exists";
     	}
     	while ($row) { ?>
    
@@ -45,15 +45,12 @@
 
 		   <br/> <br/>
 
-    	<?php  $row = mysqli_fetch_array($reshis);} ?>
+    	<?php  $row = mysqli_fetch_array($rescurr);} ?>
  
 
 		
 		<p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
 	</form>
-		
-		
- 
 		
 </body>
 </html>

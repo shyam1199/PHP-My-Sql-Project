@@ -18,28 +18,13 @@
 
 		
         <form method="post" action="index.php">
-
-        
-
-		<!-- notification message -->
-		<?php if (isset($_SESSION['success'])) : ?>
-			<div class="error success" >
-				<h3>
-					<?php 
-						echo $_SESSION['success']; 
-						unset($_SESSION['success']);
-					?>
-				</h3>
-			</div>
-		<?php endif ?>
-
 		
 		
 		<div class="input-group">
 			<button type="submit" class="btn" name="complain_user">New Complain</button>
 		</div>
 		<div class="input-group">
-			<button type="submit" class="btn" name="login_user">Current Complaint</button>
+			<button type="submit" class="btn" name="complain_current">Current Complaint</button>
 		</div>
 		<div class="input-group">
 			<button type="submit" class="btn" name="complain_history">Complaint History</button>
