@@ -20,14 +20,14 @@
 			<input type="text" name="dept" value="<?php echo $dept; ?>">
 		</div>
 
-		<select id="department" name="department">                      
+		Choose Department :<select id="department" name="department">                      
   			<option value="None">--Select Animal--</option>
   			<option value="Water Supply">Water Supply</option>
   			<option value="Road Management">Road Management</option>
   			<option value="Cow">Cow</option>
 		</select>
 		<?php
-		if($_POST['department'] && $_POST['department'] != 0):
+		if(isset($_POST['department']) ):
 		   	$department=$_POST['department'];
 			if($department == "Water Supply"):?>
 			
