@@ -26,19 +26,19 @@
   			<option value="Road Management">Road Management</option>
   			<option value="Cow">Cow</option>
 		</select>
-		if($_POST['submit'] && $_POST['submit'] != 0)
-		{
+		<?php
+		if($_POST['submit'] && $_POST['submit'] != 0):
 		   	$department=$_POST['department'];
-			if($department == "Water Supply")
-			{
+			if($department == "Water Supply"):?>
+			
 				<select id="problem" name="problem">                      
   				<option value="None">--Problem--</option>
   				<option value="Pipeline Blockage">Pipeline Blockage</option>
   				<option value="Pipeline Leakage">Pipeline Leakage</option>			</select>
 
-			}
-			if($department == "Road Management")
-			{
+			
+			<?php elseif($department == "Road Management"): ?>
+			
 				<select id="problem" name="problem">                      
   				<option value="None">--Problem--</option>
   				<option value="Potholes">Potholes</option>
@@ -46,9 +46,9 @@
   				<option value="Reconstruction">Reconstruction</option>
   				<option value="Speed breaker">Speed breaker</option>			</select>
 
-			}
-			if($department == "Sewage & Waste Managemen")
-			{
+			
+			<?php elseif($department == "Sewage & Waste Managemen"): ?>
+			
 				<select id="problem" name="problem">                      
   				<option value="None">--Problem--</option>
   				<option value="Manhole">Manhole</option>
@@ -59,9 +59,10 @@
 				<option value="Dustbin installation">Dustbin installation</option>
 			</select>
 
-			}
+		<?php endif; ?>
 
-		}
+	<?php endif; ?>
+		
 		<div class="input-group">
 			<label>Problem Type</label>
 			<input type="text" name="ptype" value="<?php echo $ptype; ?>">
