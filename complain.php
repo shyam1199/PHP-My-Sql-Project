@@ -22,23 +22,45 @@
 
 		<select id="department" name="department">                      
   			<option value="None">--Select Animal--</option>
-  			<option value="Dept1">Dept1</option>
-  			<option value="Dog">Dog</option>
+  			<option value="Water Supply">Water Supply</option>
+  			<option value="Road Management">Road Management</option>
   			<option value="Cow">Cow</option>
 		</select>
 		if($_POST['submit'] && $_POST['submit'] != 0)
 		{
 		   	$department=$_POST['department'];
-			if($department == "Dept1")
+			if($department == "Water Supply")
 			{
-				<select id="department" name="department">                      
+				<select id="problem" name="problem">                      
   				<option value="None">--Problem--</option>
-  				<option value="Problem1">Problem1</option>
-  				<option value="Dog">Dog</option>
-  				<option value="Cow">Cow</option>
+  				<option value="Pipeline Blockage">Pipeline Blockage</option>
+  				<option value="Pipeline Leakage">Pipeline Leakage</option>			</select>
+
+			}
+			if($department == "Road Management")
+			{
+				<select id="problem" name="problem">                      
+  				<option value="None">--Problem--</option>
+  				<option value="Potholes">Potholes</option>
+  				<option value="Cleaning">Cleaning</option>
+  				<option value="Reconstruction">Reconstruction</option>
+  				<option value="Speed breaker">Speed breaker</option>			</select>
+
+			}
+			if($department == "Sewage & Waste Managemen")
+			{
+				<select id="problem" name="problem">                      
+  				<option value="None">--Problem--</option>
+  				<option value="Manhole">Manhole</option>
+  				<option value="Drainage Leakage">Drainage Leakage</option>
+  				<option value="Drainage Cleaning">Drainage Cleaning</option>
+  				<option value="Drainage Repair">Drainage Repair</option>			
+				<option value="Dead Animal">Dead Animal</option>	
+				<option value="Dustbin installation">Dustbin installation</option>
 			</select>
 
 			}
+
 		}
 		<div class="input-group">
 			<label>Problem Type</label>
