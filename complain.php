@@ -27,7 +27,7 @@
   			<option value="Cow">Cow</option>
 		</select>
 		<?php
-		if($_POST['submit'] && $_POST['submit'] != 0):
+		if($_POST['department'] && $_POST['department'] != 0):
 		   	$department=$_POST['department'];
 			if($department == "Water Supply"):?>
 			
