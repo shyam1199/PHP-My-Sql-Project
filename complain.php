@@ -19,6 +19,27 @@
 			<label>Select Department </label>
 			<input type="text" name="dept" value="<?php echo $dept; ?>">
 		</div>
+
+		<select id="department" name="department">                      
+  			<option value="None">--Select Animal--</option>
+  			<option value="Dept1">Dept1</option>
+  			<option value="Dog">Dog</option>
+  			<option value="Cow">Cow</option>
+		</select>
+		if($_POST['submit'] && $_POST['submit'] != 0)
+		{
+		   	$department=$_POST['department'];
+			if($department == "Dept1")
+			{
+				<select id="department" name="department">                      
+  				<option value="None">--Problem--</option>
+  				<option value="Problem1">Problem1</option>
+  				<option value="Dog">Dog</option>
+  				<option value="Cow">Cow</option>
+			</select>
+
+			}
+		}
 		<div class="input-group">
 			<label>Problem Type</label>
 			<input type="text" name="ptype" value="<?php echo $ptype; ?>">
